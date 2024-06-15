@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548578155465",
+    "project_id": "amwayuz-79fa6",
+    "storage_bucket": "amwayuz-79fa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548578155465:android:32f6c871237f2b4a032618",
+        "android_client_info": {
+          "package_name": "uz.ibrohim.amwayuz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABJZiABsDZZWhJT_PSGljGMWxGjXqRuT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

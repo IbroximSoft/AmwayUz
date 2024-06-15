@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AmwayUz</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="welcome">Assalomu alaykum, Hush kelibsiz!</string>
+    <string name="sign">Kirish</string>
+    <string name="sign_description">Sponsor bergan login parol orqali kiring</string>
+    <string name="name">Ismingizni kiriting</string>
+    <string name="password">Parol kiriting</string>
+</resources>
