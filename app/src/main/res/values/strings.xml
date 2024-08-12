@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AmwayUz</string>
 
+    <string-array name="language">
+        <item>Uzbekcha</item>
+        <item>Узбекча</item>
+    </string-array>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="welcome">Assalomu alaykum, Hush kelibsiz!</string>
@@ -8,4 +13,24 @@
     <string name="sign_description">Sponsor bergan login parol orqali kiring</string>
     <string name="name">Ismingizni kiriting</string>
     <string name="password">Parol kiriting</string>
+    <string name="product_name">Nomi: %1$s</string>
+    <string name="artikul">Artikul: %1$s</string>
+    <string name="price">Narxi: %1$s so\'m</string>
+    <string name="amount">Miqdori: %1$s dona</string>
+    <string name="body_price">Tan narxi %1$s</string>
+    <string name="home_page">Bosh sahifa</string>
+    <string name="products_page">Mahsulotlar</string>
+    <string name="fill_them_all">Barchasini to\'ldiring!</string>
+    <string name="login_error">Raqam yoki parol xato!</string>
+    <string name="enter_number">Raqamingizni kiriting</string>
+    <string name="upload_image">Rasm yuklang</string>
+    <string name="product_body">Mahsulot tan narxi</string>
+    <string name="product_names">Mahsulot nomi</string>
+    <string name="artikul_code">Artikul</string>
+    <string name="product_prices">Mahsulot narxi</string>
+    <string name="product_amounts">Mahsulot miqdori</string>
+    <string name="save">Saqlash</string>
+    <string name="employee_page">Hodimlar</string>
+    <string name="success">Muvofaqiyatli!</string>
+    <string name="this_number_was_previously_registered">Bunday raqamdan oldin ro\'yxatdan o\'tilgan</string>
 </resources>

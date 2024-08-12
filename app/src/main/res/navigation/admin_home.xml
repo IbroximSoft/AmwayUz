@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.ibrohim.amwayuz.admin.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="uz.ibrohim.amwayuz.admin.products.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_productsFragment_to_employeeFragment"
+            app:destination="@id/employeeFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_productsAddFragment"
+            app:destination="@id/productsAddFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="uz.ibrohim.amwayuz.admin.employee.EmployeeFragment"
+        android:label="fragment_employee"
+        tools:layout="@layout/fragment_employee" />
+
+    <fragment
+        android:id="@+id/productsAddFragment"
+        android:name="uz.ibrohim.amwayuz.admin.products.productsAdd.ProductsAddFragment"
+        android:label="fragment_products_add"
+        tools:layout="@layout/fragment_products_add" />
+</navigation>

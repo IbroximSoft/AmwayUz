@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.products.ProductsFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/products_search"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#E6E6E6"
+        android:background="@drawable/ic_search_background"
+        android:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent"
+        android:windowSoftInputMode="adjustPan"
+        app:iconifiedByDefault="false"
+        app:searchIcon="@drawable/ic_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/products_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/products_search"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/products_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/products_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/primary"
+        android:focusable="true"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@android:color/white"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+</RelativeLayout>

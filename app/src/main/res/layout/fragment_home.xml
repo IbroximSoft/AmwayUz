@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".admin.home.HomeFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/home_search"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_search_background"
+        android:backgroundTint="#E6E6E6"
+        android:iconifiedByDefault="false"
+        android:windowSoftInputMode="adjustPan"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent"
+        app:searchIcon="@drawable/ic_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/home_item" />
+
+    <LinearLayout
+        android:id="@+id/home_noData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/no_data" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Hech qanday ma'lumot yo'q"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+    </LinearLayout>
+</LinearLayout>

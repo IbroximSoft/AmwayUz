@@ -4,9 +4,29 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="welcome">Assalomu alaykum, Hush kelibsiz!</string>
-    <string name="sign">Kirish</string>
-    <string name="sign_description">Sponsor bergan login parol orqali kiring</string>
-    <string name="name">Ismingizni kiriting</string>
-    <string name="password">Parol kiriting</string>
+    <string name="welcome">Ассалому алайкум, Ҳуш келибсиз!</string>
+    <string name="sign">Кириш</string>
+    <string name="sign_description">Спонсор берган логин пароль орқали киринг</string>
+    <string name="name">Исмингизни киритинг</string>
+    <string name="password">Пароль kiriting</string>
+    <string name="product_name">Номи: %1$s</string>
+    <string name="artikul">Артикул: %1$s</string>
+    <string name="price">Нархи: %1$s сўм</string>
+    <string name="amount">Миқдори: %1$s дона</string>
+    <string name="body_price">Тан нархи: %1$s сўм</string>
+    <string name="home_page">Бош саҳифа</string>
+    <string name="products_page">Маҳсулотлар</string>
+    <string name="fill_them_all">Барчасини тўлдиринг!</string>
+    <string name="login_error">Рақам ёки пароль хато!</string>
+    <string name="enter_number">Рақамингизни киритинг</string>
+    <string name="upload_image">Расм юкланг</string>
+    <string name="product_body">Маҳсулот тан нархи</string>
+    <string name="product_names">Mahsulot nomi</string>
+    <string name="artikul_code">Артикул</string>
+    <string name="product_prices">Маҳсулот нархи</string>
+    <string name="product_amounts">Маҳсулот миқдори</string>
+    <string name="save">Сақлаш</string>
+    <string name="employee_page">Ҳодимлар</string>
+    <string name="success">Мувофақиятли!</string>
+    <string name="this_number_was_previously_registered">Бундай рақамдан олдин рўйхатдан ўтилган</string>
 </resources>

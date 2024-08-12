@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "uz.ibrohim.amwayuz"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -54,6 +55,7 @@ dependencies {
     //Firebase
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
 
     //Navigation Fragment
     implementation (libs.androidx.fragment)
@@ -65,4 +67,21 @@ dependencies {
 
     //Toast
     implementation (libs.toast.grender)
+
+    //Progress
+    implementation(libs.progress.colakcode)
+
+    //Dialog
+    implementation(libs.dialog.umeshJangid)
+
+    //Camera
+    implementation(libs.imagepicker.dhaval2404)
+
+    //Glide
+    annotationProcessor(libs.glide.compiler)
+    implementation(libs.glide.bumptech)
+
+    //ViewModel
+    implementation(libs.viewModel.lifecycle)
+    implementation(libs.viewModel.runtime)
 }

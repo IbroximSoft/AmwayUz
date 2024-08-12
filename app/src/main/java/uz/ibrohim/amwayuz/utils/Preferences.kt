@@ -20,9 +20,19 @@ object Preferences {
             preferences.edit().putString(Preferences::language.name, value).apply()
         }
 
-    var token: String
-        get() = preferences.getString(Preferences::token.name, "")!!
+    var uid: String
+        get() = preferences.getString(Preferences::uid.name, "")!!
         set(value) {
-            preferences.edit().putString(Preferences::token.name, value).apply()
+            preferences.edit().putString(Preferences::uid.name, value).apply()
+        }
+    var name: String
+        get() = preferences.getString(Preferences::uid.name, "")!!
+        set(value) {
+            preferences.edit().putString(Preferences::uid.name, value).apply()
+        }
+    var isAdmin: String
+        get() = preferences.getString(Preferences::uid.name, "")!!
+        set(value) {
+            preferences.edit().putString(Preferences::uid.name, value).apply()
         }
 }
