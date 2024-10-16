@@ -1,15 +1,25 @@
 package uz.ibrohim.amwayuz
 
+import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import uz.ibrohim.amwayuz.admin.HomeActivity
 import uz.ibrohim.amwayuz.databinding.ActivitySplashesBinding
+import uz.ibrohim.amwayuz.employee.EmployeeActivity
 import uz.ibrohim.amwayuz.login.LoginActivity
 import uz.ibrohim.amwayuz.utils.Preferences
-import uz.ibrohim.amwayuz.employee.EmployeeActivity
+import java.util.Objects
+
 
 class SplashesActivity : AppCompatActivity() {
 
@@ -35,11 +45,11 @@ class SplashesActivity : AppCompatActivity() {
                     getIntents(intent)
                     return@postDelayed
                 }
-            }else{
+            } else {
                 val intent = Intent(this, LoginActivity::class.java)
                 getIntents(intent)
             }
-        }, 1800)
+        }, 2000)
     }
 
     private fun getIntents(intent: Intent) {

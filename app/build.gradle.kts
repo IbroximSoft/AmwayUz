@@ -84,4 +84,9 @@ dependencies {
     //ViewModel
     implementation(libs.viewModel.lifecycle)
     implementation(libs.viewModel.runtime)
+
+    //Splash Animation
+    implementation(libs.splash.airbnb)
+
+    implementation("com.github.ibrahimsn98:CirclesLoadingView:1.0")
 }

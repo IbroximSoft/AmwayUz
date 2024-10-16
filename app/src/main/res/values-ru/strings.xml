@@ -6,7 +6,7 @@
 
     <string name="welcome">Ассалому алайкум, Ҳуш келибсиз!</string>
     <string name="sign">Кириш</string>
-    <string name="sign_description">Спонсор берган логин пароль орқали киринг</string>
+    <string name="sign_description">Спонсор берган рақам пароль орқали киринг</string>
     <string name="name">Исмингизни киритинг</string>
     <string name="password">Пароль kiriting</string>
     <string name="product_name">Номи: %1$s</string>

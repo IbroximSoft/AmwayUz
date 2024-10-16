@@ -2,10 +2,12 @@ package uz.ibrohim.amwayuz.utils
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import androidx.activity.result.ActivityResultLauncher
@@ -148,4 +150,17 @@ fun Fragment.requestStoragePermission(
                 }
         }
     }
+}
+
+fun versionTest(context: Context) {
+    val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+    builder.setMessage("Eski versiya yangilang")
+    builder.setCancelable(false)
+
+    builder.setPositiveButton("Yes") { _, _ ->
+        val uri = Uri.parse("https://t.me/+VR4hB01lzp4zZjdi")
+        context.startActivity(Intent(Intent.ACTION_VIEW, uri))
+    }
+    val alert: AlertDialog = builder.create()
+    alert.show()
 }

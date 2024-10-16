@@ -23,6 +23,7 @@ firebaseStorage = "21.0.0"
 imagePicker = "2.1"
 glide = "4.16.0"
 viewModel = "2.7.0"
+splash = "3.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -68,6 +69,9 @@ glide-bumptech = { group = "com.github.bumptech.glide", name = "glide", version.
 #ViewModel
 viewModel-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewModel"}
 viewModel-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "viewModel"}
+
+#Splash
+splash-airbnb = { group = "com.airbnb.android", name = "lottie", version.ref = "splash"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
