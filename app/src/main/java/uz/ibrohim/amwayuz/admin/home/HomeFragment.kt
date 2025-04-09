@@ -3,15 +3,19 @@ package uz.ibrohim.amwayuz.admin.home
 import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import uz.ibrohim.amwayuz.admin.products.ProductsItem
 import uz.ibrohim.amwayuz.databinding.FragmentHomeBinding
+import uz.ibrohim.amwayuz.utils.Preferences
 import java.util.Locale
 
 
@@ -23,6 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var productsList: ArrayList<ProductsItem>
     private lateinit var productsListFilter: ArrayList<ProductsItem>
     private lateinit var adapter: HomeAdapter
+    private val viewModel: ProductViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,6 +85,7 @@ class HomeFragment : Fragment() {
                         val items: ProductsItem? = data.toObject(ProductsItem::class.java)
                         if (items != null) {
                             productsList.add(items)
+                            viewModel.selectedEmployee = productsList
                         }
                     }
 

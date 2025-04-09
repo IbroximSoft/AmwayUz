@@ -2,6 +2,9 @@ package uz.ibrohim.amwayuz.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import uz.ibrohim.amwayuz.admin.employee.EmployeeItem
+import uz.ibrohim.amwayuz.admin.products.ProductsItem
 
 object Preferences {
     private lateinit var preferences: SharedPreferences
@@ -35,4 +38,19 @@ object Preferences {
         set(value) {
             preferences.edit().putString(Preferences::uid.name, value).apply()
         }
+
+    // 🔥 YANGI: Butun EmployeeItem obyektini saqlash
+    var employee: ProductsItem?
+        get() {
+            val json = preferences.getString(::employee.name, null)
+            return if (json != null) Gson().fromJson(json, ProductsItem::class.java) else null
+        }
+        set(value) {
+            val json = Gson().toJson(value)
+            preferences.edit().putString(::employee.name, json).apply()
+        }
+
+    fun clear() {
+        preferences.edit().clear().apply()
+    }
 }

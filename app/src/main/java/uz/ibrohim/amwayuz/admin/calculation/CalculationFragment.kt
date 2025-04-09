@@ -13,9 +13,11 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import uz.ibrohim.amwayuz.R
+import uz.ibrohim.amwayuz.admin.home.ProductViewModel
 import uz.ibrohim.amwayuz.admin.products.ProductsAdapter
 import uz.ibrohim.amwayuz.admin.products.ProductsItem
 import uz.ibrohim.amwayuz.databinding.DialogCalculationBinding
@@ -35,6 +37,7 @@ class CalculationFragment : Fragment() {
 
     private lateinit var selectedItems: ArrayList<ProductsItem>
     private lateinit var selectedAdapter: CalculationsAdapter
+    private val viewModel: ProductViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -103,29 +106,24 @@ class CalculationFragment : Fragment() {
             productsList.clear()
             productsListFilter.clear()
 
-            db.collection("products").get()
-                .addOnSuccessListener {
-                    if (!it.isEmpty) {
-                        for (data in it.documents) {
-                            val item: ProductsItem? = data.toObject(ProductsItem::class.java)
-                            if (item != null) {
-                                productsList.add(item)
-                            }
-                        }
-                        productsListFilter.addAll(productsList)
+            val selected = viewModel.selectedEmployee
 
-                        adapter = CalculationAdapter(productsListFilter, object : CalculationAdapter.OnItemClickListener {
-                            override fun onItemClick(product: ProductsItem, position: Int) {
-                                // Add selected product to selectedItems list
-                                selectedItems.add(product)
-                                selectedAdapter.notifyItemInserted(selectedItems.size - 1)
-                                updateTotalPrice() // narxni qayta hisoblaymiz
-                                dialog.dismiss()
-                            }
-                        })
-                        calculationRv.adapter = adapter
-                    }
+            selected!!.forEach {
+                productsList.add(it)
+            }
+
+            productsListFilter.addAll(productsList)
+
+            adapter = CalculationAdapter(productsListFilter, object : CalculationAdapter.OnItemClickListener {
+                override fun onItemClick(product: ProductsItem, position: Int) {
+                    // Add selected product to selectedItems list
+                    selectedItems.add(product)
+                    selectedAdapter.notifyItemInserted(selectedItems.size - 1)
+                    updateTotalPrice() // narxni qayta hisoblaymiz
+                    dialog.dismiss()
                 }
+            })
+            calculationRv.adapter = adapter
 
             calculationSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(p0: String?): Boolean = false
