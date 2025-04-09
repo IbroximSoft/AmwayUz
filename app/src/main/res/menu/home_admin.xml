@@ -18,6 +18,11 @@
             android:id="@+id/employeeFragment"
             android:icon="@drawable/ic_employee"
             android:title="@string/employee_page" />
+
+        <item
+            android:id="@+id/calculationFragment"
+            android:icon="@drawable/ic_calculate"
+            android:title="Xisoblash" />
     </group>
 
 </menu>

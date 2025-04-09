@@ -12,7 +12,7 @@
         android:layout_height="55dp"
         android:layout_margin="10dp"
         android:backgroundTint="#E6E6E6"
-        android:background="@drawable/ic_search_background"
+        android:background="@drawable/search_background"
         android:iconifiedByDefault="false"
         app:queryBackground="@android:color/transparent"
         android:windowSoftInputMode="adjustPan"

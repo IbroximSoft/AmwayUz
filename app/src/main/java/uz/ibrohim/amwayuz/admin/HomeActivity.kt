@@ -42,8 +42,7 @@ class HomeActivity : AppCompatActivity() {
         reference.child("app_setting").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val currentVersion: String = snapshot.child("version").value.toString()
-                val version = "1.0.0"
-                Toast.makeText(this@HomeActivity, currentVersion, Toast.LENGTH_SHORT).show()
+                val version = "1.0.1"
                 if (currentVersion != version) {
                     versionTest(this@HomeActivity)
                 }
@@ -74,6 +73,10 @@ class HomeActivity : AppCompatActivity() {
 
                     R.id.employeeFragment -> {
                         binding.adminText.text = getString(R.string.employee_page)
+                    }
+
+                    R.id.calculationFragment -> {
+                        binding.adminText.text = "Xisoblash"
                     }
                 }
             }

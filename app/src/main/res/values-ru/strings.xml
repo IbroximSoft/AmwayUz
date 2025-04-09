@@ -29,4 +29,5 @@
     <string name="employee_page">Ҳодимлар</string>
     <string name="success">Мувофақиятли!</string>
     <string name="this_number_was_previously_registered">Бундай рақамдан олдин рўйхатдан ўтилган</string>
+    <string name="calculation_product_add">Mahsulot qo\'shish</string>
 </resources>

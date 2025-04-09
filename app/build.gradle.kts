@@ -89,4 +89,16 @@ dependencies {
     implementation(libs.splash.airbnb)
 
     implementation("com.github.ibrahimsn98:CirclesLoadingView:1.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
+
+    //Retrofit
+    implementation(libs.retrofit.squareup)
+    implementation(libs.retrofit.gson)
+    debugImplementation(libs.library)
+    releaseImplementation (libs.library.no.op)
+    implementation(libs.logging.interceptor)
+    implementation(libs.okhttp)
+
+    implementation(files("libs/core-3.1.0.jar"))
+    implementation(files("libs/telpo_api_20221115.aar"))
 }

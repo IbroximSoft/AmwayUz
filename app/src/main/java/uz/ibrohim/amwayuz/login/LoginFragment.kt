@@ -137,7 +137,7 @@ class LoginFragment : Fragment() {
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val name = snapshot.child("name").value.toString()
-                    val isAdmin = snapshot.child("isAdmin").value.toString()
+                    val isAdmin = snapshot.child("status").value.toString()
 
                     Preferences.uid = currentUserId
                     Preferences.name = name

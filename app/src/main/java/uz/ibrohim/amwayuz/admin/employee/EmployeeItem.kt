@@ -4,5 +4,6 @@ data class EmployeeItem(
     var name: String? = null,
     var number: String? = null,
     var uid: String? = null,
-    var isAdmin: String? = null,
+    var status: String? = null,
+    var password: String? = null
 )

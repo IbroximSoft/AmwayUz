@@ -39,4 +39,9 @@
         android:name="uz.ibrohim.amwayuz.admin.products.productsAdd.ProductsAddFragment"
         android:label="fragment_products_add"
         tools:layout="@layout/fragment_products_add" />
+    <fragment
+        android:id="@+id/calculationFragment"
+        android:name="uz.ibrohim.amwayuz.admin.calculation.CalculationFragment"
+        android:label="fragment_calculation"
+        tools:layout="@layout/fragment_calculation" />
 </navigation>

@@ -33,4 +33,5 @@
     <string name="employee_page">Hodimlar</string>
     <string name="success">Muvofaqiyatli!</string>
     <string name="this_number_was_previously_registered">Bunday raqamdan oldin ro\'yxatdan o\'tilgan</string>
+    <string name="calculation_product_add">Mahsulot qo\'shish</string>
 </resources>

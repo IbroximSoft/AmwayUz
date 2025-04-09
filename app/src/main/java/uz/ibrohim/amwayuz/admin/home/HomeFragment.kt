@@ -1,6 +1,7 @@
 package uz.ibrohim.amwayuz.admin.home
 
 import android.annotation.SuppressLint
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import uz.ibrohim.amwayuz.admin.products.ProductsItem
 import uz.ibrohim.amwayuz.databinding.FragmentHomeBinding
 import java.util.Locale
+
 
 class HomeFragment : Fragment() {
 
@@ -28,6 +30,8 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+//        binding.homeSearch.queryHint = "Izlash..."
+
         productsList = arrayListOf()
         productsListFilter = arrayListOf()
         dataGet()
@@ -43,16 +47,17 @@ class HomeFragment : Fragment() {
 
                     productsListFilter.clear()
                     val searchText = p0.lowercase(Locale.getDefault())
-                    if (searchText.isNotEmpty()){
-                        productsList.forEach{
+                    if (searchText.isNotEmpty()) {
+                        productsList.forEach {
                             if (it.name?.lowercase(Locale.getDefault())!!.contains(searchText) ||
-                                it.code?.lowercase(Locale.getDefault())!!.contains(searchText)){
+                                it.code?.lowercase(Locale.getDefault())!!.contains(searchText)
+                            ) {
                                 productsListFilter.add(it)
                             }
                         }
                         homeRv.adapter?.notifyDataSetChanged()
                         nullDataList()
-                    }else{
+                    } else {
                         productsListFilter.clear()
                         productsListFilter.addAll(productsList)
                         homeRv.adapter?.notifyDataSetChanged()
@@ -79,7 +84,6 @@ class HomeFragment : Fragment() {
                     }
 
                     productsListFilter.addAll(productsList)
-
                     adapter = HomeAdapter(productsListFilter)
                     binding.homeRv.adapter = adapter
                 }
@@ -87,12 +91,12 @@ class HomeFragment : Fragment() {
             }
     }
 
-    private fun nullDataList(){
+    private fun nullDataList() {
         binding.apply {
-            if (productsListFilter.isNotEmpty()){
+            if (productsListFilter.isNotEmpty()) {
                 homeNoData.isVisible = false
                 homeRv.isVisible = true
-            }else{
+            } else {
                 homeRv.isVisible = false
                 homeNoData.isVisible = true
             }

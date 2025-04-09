@@ -1,8 +1,11 @@
 package uz.ibrohim.amwayuz.admin.employee
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.appuj.customizedalertdialoglib.CustomizedAlertDialog
 import com.appuj.customizedalertdialoglib.CustomizedAlertDialogCallback
@@ -15,20 +18,27 @@ class EmployeeAdapter(private val list: List<EmployeeItem>, val listener: OnItem
         RecyclerView.ViewHolder(itemAdapterItemBinding.root) {
 
         fun onBind(student: EmployeeItem) {
-            itemAdapterItemBinding.usersTxt.text = student.name
+            itemAdapterItemBinding.apply {
 
-            itemAdapterItemBinding.usersDelete.setOnClickListener {
-                CustomizedAlertDialog.callAlertDialog(itemView.context, "Diqqat!",
-                    "Siz ushbu kategoriyani o'chirmoqchimisiz ?",
-                    "Xa", "Yo'q", false,
-                    object : CustomizedAlertDialogCallback<String> {
-                        @SuppressLint("NotifyDataSetChanged")
-                        override fun alertDialogCallback(callback: String) {
-                            if (callback == "1") {
-                                listener.onItemClick(student, position)
+                usersTxt.text = student.name
+
+                if (student.status.toBoolean()){
+                    usersDelete.isVisible = false
+                }
+
+                usersDelete.setOnClickListener {
+                    CustomizedAlertDialog.callAlertDialog(itemView.context, "Diqqat!",
+                        "Siz ushbu kategoriyani o'chirmoqchimisiz ?",
+                        "Xa", "Yo'q", false,
+                        object : CustomizedAlertDialogCallback<String> {
+                            @SuppressLint("NotifyDataSetChanged")
+                            override fun alertDialogCallback(callback: String) {
+                                if (callback == "1") {
+                                    listener.onItemClick(student, position)
+                                }
                             }
-                        }
-                    })
+                        })
+                }
             }
         }
     }

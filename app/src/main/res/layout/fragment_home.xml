@@ -12,11 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_margin="10dp"
-        android:background="@drawable/ic_search_background"
-        android:backgroundTint="#E6E6E6"
+        android:background="@drawable/search_background"
         android:iconifiedByDefault="false"
         android:windowSoftInputMode="adjustPan"
         app:iconifiedByDefault="false"
+        app:queryHint="Izlash..."
         app:queryBackground="@android:color/transparent"
         app:searchIcon="@drawable/ic_search" />
 

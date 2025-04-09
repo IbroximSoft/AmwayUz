@@ -13,7 +13,8 @@
         android:layout_height="120dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_image"
+        android:background="@drawable/ic_product_add"
+        android:backgroundTint="@color/primary"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.textfield.TextInputLayout

@@ -4,12 +4,15 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -17,8 +20,13 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import uz.ibrohim.amwayuz.R
+import uz.ibrohim.amwayuz.admin.employee.request_response.RequestEmployee
+import uz.ibrohim.amwayuz.admin.employee.services.EmployeeViewModel
 import uz.ibrohim.amwayuz.databinding.EmployeeDialogBinding
 import uz.ibrohim.amwayuz.databinding.FragmentEmployeeBinding
+import uz.ibrohim.amwayuz.retrofit.ApiClient
+import uz.ibrohim.amwayuz.retrofit.NetworkHelper
+import uz.ibrohim.amwayuz.retrofit.Resource
 import uz.ibrohim.amwayuz.utils.errorToast
 import uz.ibrohim.amwayuz.utils.progressInterface
 import uz.ibrohim.amwayuz.utils.successToast
@@ -58,12 +66,11 @@ class EmployeeFragment : Fragment() {
         dialog.setContentView(binding.root)
         dialog.setCanceledOnTouchOutside(false)
         val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
-//      val height = (resources.displayMetrics.heightPixels * 0.90).toInt()
         dialog.window!!.setLayout(
             width,
             WindowManager.LayoutParams.WRAP_CONTENT
         )
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
 
         binding.apply {
@@ -87,7 +94,8 @@ class EmployeeFragment : Fragment() {
                                 val dataHas = HashMap<String, String>()
                                 dataHas["name"] = name
                                 dataHas["number"] = number
-                                dataHas["isAdmin"] = "false"
+                                dataHas["status"] = "false"
+                                dataHas["password"] = password
                                 dataHas["uid"] = currentUserID
                                 db.child("users").child(currentUserID).setValue(dataHas)
                                     .addOnCompleteListener {
@@ -119,9 +127,14 @@ class EmployeeFragment : Fragment() {
                     }
                     binding.employeeRv.adapter = EmployeeAdapter(userArrayList, object :EmployeeAdapter.OnItemClickListener{
                         override fun onItemClick(student: EmployeeItem, position: Int) {
-
+                            db.child("users").child(student.uid!!).removeValue()
+                                .addOnSuccessListener {
+                                    Toast.makeText(requireContext(), "O'chirildi", Toast.LENGTH_SHORT).show()
+                                }
+                                .addOnFailureListener { exception ->
+                                    Toast.makeText(requireContext(), "Xatolik $exception", Toast.LENGTH_SHORT).show()
+                                }
                         }
-
                     })
                 }
             }
